@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EduTrack</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+        input { margin: 4px; padding: 6px; }
+        button { padding: 6px 14px; cursor: pointer; }
+        li { margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <h1>EduTrack Student Manager</h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Add Student</button>
+    </form>
+    <h2>Students</h2>
+    <ul>
+        {% for s in students %}
+            <li>{{ s.name }} — {{ s.email }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
